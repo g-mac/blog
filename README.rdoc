@@ -1,4 +1,21 @@
-== README
+== README (Simon)
+
+Heroku creation:
+$ heroku login (simonmayrshofer@gmail.com)
+$ heroku create
+$ heroku git push heroku master
+$ heroku run rake db:create db:migrate #(had to run this for it to work?)
+
+Heroku deployment:
+$ heroku login
+$ heroku git push heroku master
+$ heroku open
+
+Local deployment:
+$ heroku local
+
+
+== README (template)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
