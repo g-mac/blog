@@ -1,6 +1,6 @@
 == README (Simon)
 
-= Heroku creation:
+=== Heroku creation:
 
 $ heroku login (simonmayrshofer@gmail.com)
 
@@ -11,7 +11,7 @@ $ heroku git push heroku master
 $ heroku run rake db:create db:migrate #(had to run this for it to work?)
 
 
-= Heroku deployment:
+=== Heroku deployment:
 
 $ heroku login
 
@@ -20,7 +20,7 @@ $ heroku git push heroku master
 $ heroku open
 
 
-= Local deployment:
+=== Local deployment:
 
 $ heroku local
 
