@@ -12,8 +12,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Posts</a></li>
+        <!--<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>-->
+        <li><%= link_to 'Home', welcome_index_path %></li>
+        <li><%= link_to 'Articles', controller: 'articles' %></li>
+        <li><%= link_to 'New Article', new_article_path %></li>
       </ul>
 
       <form class="navbar-form navbar-right" role="search">
