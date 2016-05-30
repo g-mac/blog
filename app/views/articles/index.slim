@@ -1,15 +1,21 @@
 .container
-  h1 Listing articles
-  table
-    tr
-      th Title
-      th Text
-      th colspan="2"
-
-    - @articles.each do |article|
+  .panel.panel-default
+    .panel-heading List of Articles
+    .panel-body
+      | This list contains all the articles in my blog. Click on 'show' to read them.
+    table.table
       tr
-        td= article.title
-        td= article.text
-        td= link_to 'Show', article_path(article)
-        td= link_to 'Edit', edit_article_path(article)
-        td= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}
+        th Title
+        th Text
+        th colspan="2"
+
+      - @articles.each do |article|
+        tr
+          td= article.title
+          td= article.text
+          td= link_to article_path(article), class:"btn btn-default" do
+            i.glyphicon.glyphicon-search
+          td= link_to edit_article_path(article), class:"btn btn-default" do
+            i.glyphicon.glyphicon-edit
+          td= link_to article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class:"btn btn-default" do
+            i.glyphicon.glyphicon-remove

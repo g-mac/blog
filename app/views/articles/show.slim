@@ -1,16 +1,16 @@
 .container
-  p
-    strong
-      | Title:
-    = @article.title
-  p
-    strong
-      | Text:
-    = @article.text
-  h2
+  .panel.panel-default
+    .panel-heading
+      strong
+        | Title:
+      = @article.title
+    .panel-body
+      = @article.text
+
+  h4
     | Comments
   = render @article.comments
-  h2
+  h4
     | Add a comment:
   = render 'comments/form'
   = link_to 'Edit', edit_article_path(@article)
