@@ -13,9 +13,11 @@
         tr
           td= article.title
           td= article.text
+          /td= button_to article_path(article), class:"btn btn-default" do
+          /  span.glyphicon.glyphicon-search read
           td= link_to article_path(article), class:"btn btn-default" do
-            i.glyphicon.glyphicon-search
+            span.glyphicon.glyphicon-search
           td= link_to edit_article_path(article), class:"btn btn-default" do
-            i.glyphicon.glyphicon-edit
+            span.glyphicon.glyphicon-edit
           td= link_to article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class:"btn btn-default" do
-            i.glyphicon.glyphicon-remove
+            span.glyphicon.glyphicon-remove

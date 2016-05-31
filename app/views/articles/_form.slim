@@ -1,4 +1,5 @@
-= form_for @article do |f|
+= bootstrap_form_for @article do |f|
+
   - if @article.errors.any?
     #error_explanation
       h2
@@ -8,13 +9,7 @@
         - @article.errors.full_messages.each do |msg|
           li
             = msg
-  p
-    = f.label :title
-    br
-    = f.text_field :title
-  p
-    = f.label :text
-    br
-    = f.text_area :text
-  p
-    = f.submit
+
+  = f.text_field :title
+  = f.text_area :text
+  = f.submit
