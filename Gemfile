@@ -50,6 +50,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'slim-rails'
 
+gem 'bootstrap_form'
+
 # gem 'foreman'
 # group :production, :staging do
 #   gem 'rails_12factor'
