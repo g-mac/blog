@@ -52,6 +52,8 @@ gem 'slim-rails'
 
 gem 'bootstrap_form'
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
 # gem 'foreman'
 # group :production, :staging do
 #   gem 'rails_12factor'
