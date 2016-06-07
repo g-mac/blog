@@ -23,13 +23,13 @@ nav.navbar.navbar-default.navbar-static-top
         - if current_user
           form.navbar-form role='logout'
             | Logged in as #{current_user.email} &nbsp
-            = link_to 'Log out', log_out_path, class: 'btn btn-default'
+            = link_to 'Log out', log_out_path, class: 'btn btn-default btn-warning'
         - else
           = form_tag sessions_path, class: 'form navbar-form' do
             .form-group
               = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'email'
               = password_field_tag :password, nil, class: 'form-control', placeholder: 'password'
-              = submit_tag 'login', class: 'form-control'
+              = submit_tag 'login', class: 'form-control', class: 'btn btn-default btn-primary'
 
       /.navbar-right
       /  form.navbar-form
