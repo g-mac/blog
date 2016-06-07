@@ -4,7 +4,7 @@ nav.navbar.navbar-default.navbar-static-top
     /! Header
     .navbar-header
       .navbar-brand.p = link_to 'Simon\'s Blog', welcome_index_path
-        /img alt=("Simon's Blog") src="..."
+    /img alt=('Simon's Blog') src='...'
         /| Simon's Blog
 
     /! Collect the nav links, forms, and other content for toggling
@@ -13,14 +13,32 @@ nav.navbar.navbar-default.navbar-static-top
         li class=('active' if current_page?(controller: 'welcome')) = link_to 'Home', welcome_index_path
         li class=('active' if current_page?(controller: 'articles', action: 'index')) = link_to 'Articles', controller: 'articles'
         li class=('active' if current_page?(controller: 'articles', action: 'new')) = link_to 'New Article', new_article_path
+        /li class=('active' if current_page?(controller: 'users', action: 'new')) = link_to 'Sign Up', sign_up_path if !current_user
 
-      /form.navbar-form role="search"
-      /  .form-group
-      /    input.form-control placeholder="Search" type="text"
-      /  button.btn.btn-default type="submit" Submit
+      - if !current_user
+        ul.nav.navbar-nav.navbar-right
+          li class=('active' if current_page?(controller: 'users', action: 'new')) = link_to 'Sign Up', sign_up_path
 
-      form.navbar-form.navbar-right role="login"
-        .form-group
-          input.form-control placeholder="Email" type="email"
-          input.form-control placeholder="Password" type="password"
-        button.btn.btn-default type="submit" Login/Signup
+      .navbar-right
+        - if current_user
+          form.navbar-form role='logout'
+            | Logged in as #{current_user.email} &nbsp
+            = link_to 'Log out', log_out_path, class: 'btn btn-default'
+        - else
+          = form_tag sessions_path, class: 'form navbar-form' do
+            .form-group
+              = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'email'
+              = password_field_tag :password, nil, class: 'form-control', placeholder: 'password'
+              = submit_tag 'login', class: 'form-control'
+
+      /.navbar-right
+      /  form.navbar-form
+      /    /button.btn.button-default logged out
+      /    - flash.each do |name, msg|
+      /      = content_tag :div, msg, :id => 'flash_#{name}'
+
+      - if current_user
+        form.navbar-form role='search'
+          .form-group
+            input.form-control placeholder='Search' type='text'
+          button.btn.btn-default type='submit' Go!
