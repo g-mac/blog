@@ -54,7 +54,7 @@ gem 'bootstrap_form'
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 # gem 'foreman'
 # group :production, :staging do
