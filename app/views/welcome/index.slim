@@ -3,9 +3,9 @@
   br
 
   .row.text-center
-    img.img-circle.img-responsive.center-block src="/assets/simon_medium.jpg"
+    img.img-circle.img-responsive.center-block src="/assets/simon_skydive_landing_small.jpg"
     br
-    .h3 Welcome to Simon's Blog!
+    .h2 Welcome to Simon's Blog!
     br
     .p.lead
       | This website shall act as my portfolio, while at the same time demonstrating some of my
@@ -18,7 +18,7 @@
     .jumbotron.text-center
       .p.lead
         | You can simply browse around as is or even sign up and login to view some of the advanced features of this
-        | site, create blog posts, write comments and explore other stuff.
+        | &nbspsite, create blog posts, write comments and explore other stuff.
       = link_to sign_up_path, class: 'button btn btn-info btn-lg' do
         .span.glyphicon.glyphicon-road
         | &nbsp Sign Up Now
@@ -26,7 +26,10 @@
   hr
   br
 
-  .h2.text-center Technology Used
+  .h2.text-center
+    |Technology
+    small
+      | &nbsp[used for this project]
   br
   br
   .row
