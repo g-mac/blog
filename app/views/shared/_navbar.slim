@@ -10,9 +10,10 @@ nav.navbar.navbar-default.navbar-static-top
     /! Collect the nav links, forms, and other content for toggling
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav
-        li class=('active' if current_page?(controller: 'welcome')) = link_to 'Home', welcome_index_path
-        li class=('active' if current_page?(controller: 'articles', action: 'index')) = link_to 'Articles', controller: 'articles'
-        li class=('active' if current_page?(controller: 'articles', action: 'new')) = link_to 'New Article', new_article_path
+        li class=('active' if current_page?(controller: 'welcome', action: 'index')) = link_to 'Home', welcome_index_path
+        li class=('active' if current_page?(controller: 'welcome', action: 'portfolio')) = link_to 'Portfolio', welcome_portfolio_path
+        li class=('active' if current_page?(controller: 'articles', action: 'index')) = link_to 'Blog', controller: 'articles'
+        /li class=('active' if current_page?(controller: 'articles', action: 'new')) = link_to 'New Article', new_article_path
         /li class=('active' if current_page?(controller: 'users', action: 'new')) = link_to 'Sign Up', sign_up_path if !current_user
 
       - if !current_user
