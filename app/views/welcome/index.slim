@@ -1,2 +1,74 @@
 .container
-  .h1 Welcome to Simon's Blog!
+
+  br
+
+  .row.text-center
+    img.img-circle.img-responsive.center-block src="/assets/simon_medium.jpg"
+    br
+    .h3 Welcome to Simon's Blog!
+    br
+    .p.lead
+      | This website shall act as my portfolio, while at the same time demonstrating some of my
+      |  web development skills.
+
+  hr
+  br
+
+  .row
+    .jumbotron.text-center
+      .p.lead
+        | You can simply browse around as is or even sign up and login to view some of the advanced features of this
+        | site, create blog posts, write comments and explore other stuff.
+      = link_to sign_up_path, class: 'button btn btn-info btn-lg' do
+        .span.glyphicon.glyphicon-road
+        | &nbsp Sign Up Now
+
+  hr
+  br
+
+  .h2.text-center Technology Used
+  br
+  br
+  .row
+    .col-md-4.text-center
+      img.img-circle.img-responsive.center-block src="/assets/rails_logo.jpg"
+      .h3 Ruby on Rails
+      .p
+        |Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        | Vestibulum id ligula porta felis euismod semper.
+    .col-md-4.text-center
+      img.img-circle.img-responsive.center-block src="/assets/bootstrap_logo.png"
+      .h3 Bootstrap
+      .p
+        |Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        | Vestibulum id ligula porta felis euismod semper.
+    .col-md-4.text-center
+      img.img-circle.img-responsive.center-block src="/assets/slim_logo.png"
+      .h3 Slim
+      .p
+        |Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        | Vestibulum id ligula porta felis euismod semper.
+  br
+  br
+  .row
+    .col-md-4.text-center
+      img.img-circle.img-responsive.center-block src="/assets/rubymine_logo.png"
+      .h3 Rubymine
+      .p
+        |Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        | Vestibulum id ligula porta felis euismod semper.
+    .col-md-4.text-center
+      img.img-circle.img-responsive.center-block src="/assets/github_logo.jpg"
+      .h3 Github
+      .p
+        |Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        | Vestibulum id ligula porta felis euismod semper.
+    .col-md-4.text-center
+      img.img-circle.img-responsive.center-block src="/assets/heroku_logo.png"
+      .h3 Heroku
+      .p
+        |Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        | Vestibulum id ligula porta felis euismod semper.
+
+  hr
+  br
