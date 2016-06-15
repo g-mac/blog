@@ -56,6 +56,8 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 
 gem 'rails_12factor', group: :production
 
+gem 'devise'
+
 # gem 'foreman'
 # group :production, :staging do
 #   gem 'rails_12factor'
