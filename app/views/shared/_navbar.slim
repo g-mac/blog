@@ -26,13 +26,13 @@ nav.navbar.navbar-default.navbar-static-top
             | Logged in as #{current_user.email} &nbsp
             = link_to 'Log out', log_out_path, class: 'btn btn-default btn-warning'
         - else
-          form.navbar-form role='login'
-            = link_to 'Log in', log_in_path, class: 'btn btn-default btn-primary'
-          /= form_tag sessions_path, class: 'form navbar-form' do
-          /  .form-group
-          /    = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'email'
-          /    = password_field_tag :password, nil, class: 'form-control', placeholder: 'password'
-          /    = submit_tag 'login', class: 'form-control', class: 'btn btn-default btn-primary'
+          /https://github.com/plataformatec/devise/wiki/How-To:-Display-a-custom-sign_in-form-anywhere-in-your-app
+          /= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'navbar-form' }) do |f|
+          = bootstrap_form_for(:user, :url => session_path(:user), html: { class: 'navbar-form' }) do |f|
+              = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
+              = f.password_field :password, :placeholder => 'Password', hide_label: true
+              = f.submit 'Log in', :class => 'btn btn-primary'
+          /= link_to 'Log in', log_in_path, class: 'btn btn-default btn-primary
 
       /.navbar-right
       /  form.navbar-form
