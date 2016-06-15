@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :redirect_unless_signed_in, except: [:index, :show]
-  # http_basic_authenticate_with name: "", password: "", only: :destroy
+  before_action :authenticate_user!, except: [:index, :show]
 
   def create
     @article = Article.find(params[:article_id])

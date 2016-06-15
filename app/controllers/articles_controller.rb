@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_action :redirect_unless_signed_in, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   # http_basic_authenticate_with name: "", password: "", except: [:index, :show]
 
   def index

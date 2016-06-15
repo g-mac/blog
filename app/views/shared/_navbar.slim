@@ -10,15 +10,15 @@ nav.navbar.navbar-default.navbar-static-top
     /! Collect the nav links, forms, and other content for toggling
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav
-        li class=('active' if current_page?(controller: 'welcome', action: 'index')) = link_to 'Home', welcome_index_path
-        li class=('active' if current_page?(controller: 'welcome', action: 'portfolio')) = link_to 'Portfolio', welcome_portfolio_path
-        li class=('active' if current_page?(controller: 'articles', action: 'index')) = link_to 'Blog', controller: 'articles'
+        li class=('active' if current_page?(controller: '/welcome', action: 'index')) = link_to 'Home', welcome_index_path
+        li class=('active' if current_page?(controller: '/welcome', action: 'portfolio')) = link_to 'Portfolio', welcome_portfolio_path
+        li class=('active' if current_page?(controller: '/articles', action: 'index')) = link_to 'Blog', controller: '/articles'
         /li class=('active' if current_page?(controller: 'articles', action: 'new')) = link_to 'New Article', new_article_path
         /li class=('active' if current_page?(controller: 'users', action: 'new')) = link_to 'Sign Up', sign_up_path if !current_user
 
       - if !current_user
         ul.nav.navbar-nav.navbar-right
-          li class=('active' if current_page?(controller: 'users', action: 'new')) = link_to 'Sign Up', sign_up_path
+          li class=('active' if current_page?(controller: 'devise/registrations', action: 'new')) = link_to 'Sign Up', sign_up_path
 
       .navbar-right
         - if current_user
@@ -26,11 +26,13 @@ nav.navbar.navbar-default.navbar-static-top
             | Logged in as #{current_user.email} &nbsp
             = link_to 'Log out', log_out_path, class: 'btn btn-default btn-warning'
         - else
-          = form_tag sessions_path, class: 'form navbar-form' do
-            .form-group
-              = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'email'
-              = password_field_tag :password, nil, class: 'form-control', placeholder: 'password'
-              = submit_tag 'login', class: 'form-control', class: 'btn btn-default btn-primary'
+          form.navbar-form role='login'
+            = link_to 'Log in', log_in_path, class: 'btn btn-default btn-primary'
+          /= form_tag sessions_path, class: 'form navbar-form' do
+          /  .form-group
+          /    = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'email'
+          /    = password_field_tag :password, nil, class: 'form-control', placeholder: 'password'
+          /    = submit_tag 'login', class: 'form-control', class: 'btn btn-default btn-primary'
 
       /.navbar-right
       /  form.navbar-form
