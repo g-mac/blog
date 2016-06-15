@@ -1,30 +1,28 @@
-.container
+= link_to 'New Article', new_article_path
+br
+br
 
-  = link_to 'New Article', new_article_path
-  br
-  br
+.panel.panel-default
+  .panel-heading List of Articles
+  .panel-body
+    | This list contains all the articles in my blog. Click on 'show' to read them.
+  table.table
+    tr
+      th Date
+      th Title
+      th Text
+      th colspan="3"
 
-  .panel.panel-default
-    .panel-heading List of Articles
-    .panel-body
-      | This list contains all the articles in my blog. Click on 'show' to read them.
-    table.table
+    - @articles.each do |article|
       tr
-        th Date
-        th Title
-        th Text
-        th colspan="3"
-
-      - @articles.each do |article|
-        tr
-          td= article.created_at.to_date.to_formatted_s(:long)
-          td= article.title
-          td= article.text
-          /td= button_to article_path(article), class:"btn btn-default" do
-          /  span.glyphicon.glyphicon-search read
-          td= link_to article_path(article), class:"btn btn-default" do
-            span.glyphicon.glyphicon-search
-          td= link_to edit_article_path(article), class:"btn btn-default" do
-            span.glyphicon.glyphicon-edit
-          td= link_to article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class:"btn btn-default" do
-            span.glyphicon.glyphicon-remove
+        td= article.created_at.to_date.to_formatted_s(:long)
+        td= article.title
+        td= article.text
+        /td= button_to article_path(article), class:"btn btn-default" do
+        /  span.glyphicon.glyphicon-search read
+        td= link_to article_path(article), class:"btn btn-default" do
+          span.glyphicon.glyphicon-search
+        td= link_to edit_article_path(article), class:"btn btn-default" do
+          span.glyphicon.glyphicon-edit
+        td= link_to article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class:"btn btn-default" do
+          span.glyphicon.glyphicon-remove

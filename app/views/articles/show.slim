@@ -1,43 +1,42 @@
-.container
-  h3 Article
-  p
-    div
-      label Created:&nbsp
-      /= localize(@article.created_at, :fromat => :long)
-      = @article.created_at.to_date.to_formatted_s(:long)
-    div
-      label Updated:&nbsp
-      = @article.updated_at.to_date.to_formatted_s(:long)
-  br
-  .panel.panel-default
-    .panel-heading
-      = @article.title
-      .pull-right = link_to 'edit', edit_article_path(@article)
-    /.pull-left = @article.title
-    /.pull-right = link_to 'edit_article_path(@article)', class:'btn btn-default' do
-    /    span.glyphicon.glyphicon-edit
-    /.clearfix
-    .panel-body
-      = @article.text
+h3 Article
+p
+  div
+    label Created:&nbsp
+    /= localize(@article.created_at, :fromat => :long)
+    = @article.created_at.to_date.to_formatted_s(:long)
+  div
+    label Updated:&nbsp
+    = @article.updated_at.to_date.to_formatted_s(:long)
+br
+.panel.panel-default
+  .panel-heading
+    = @article.title
+    .pull-right = link_to 'edit', edit_article_path(@article)
+  /.pull-left = @article.title
+  /.pull-right = link_to 'edit_article_path(@article)', class:'btn btn-default' do
+  /    span.glyphicon.glyphicon-edit
+  /.clearfix
+  .panel-body
+    = @article.text
 
-  br
-  hr
-  br
+br
+hr
+br
 
-  h4 Comments:
-  br
-  = render @article.comments
+h4 Comments:
+br
+= render @article.comments
 
-  br
-  br
-  hr
-  br
+br
+br
+hr
+br
 
-  h4 Add a comment:
-  br
-  = render 'comments/form'
+h4 Add a comment:
+br
+= render 'comments/form'
 
 
-  br
-  br
-  br
+br
+br
+br
