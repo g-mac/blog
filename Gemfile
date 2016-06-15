@@ -59,6 +59,8 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'omniauth-facebook'
 
+gem 'html2slim'
+
 # gem 'foreman'
 # group :production, :staging do
 #   gem 'rails_12factor'
