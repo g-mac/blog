@@ -28,10 +28,11 @@ nav.navbar.navbar-default.navbar-static-top
         - else
           /https://github.com/plataformatec/devise/wiki/How-To:-Display-a-custom-sign_in-form-anywhere-in-your-app
           /= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'navbar-form' }) do |f|
-          = bootstrap_form_for(:user, :url => session_path(:user), html: { class: 'navbar-form' }) do |f|
-              = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
-              = f.password_field :password, :placeholder => 'Password', hide_label: true
-              = f.submit 'Log in', :class => 'btn btn-primary'
+          .form.navbar-form
+            = bootstrap_form_for(:user, :url => session_path(:user)) do |f|
+                = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
+                = f.password_field :password, :placeholder => 'Password', hide_label: true
+                = f.submit 'Log in', :class => 'btn btn-primary'
           /= link_to 'Log in', log_in_path, class: 'btn btn-default btn-primary
 
       /.navbar-right
