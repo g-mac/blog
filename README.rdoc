@@ -29,3 +29,33 @@ heroku addons:create heroku-postgresql:hobby-dev
 === Local deployment:
 
 $ heroku local
+
+
+
+=== Lessons learned:
+
+DONT FORGET THE DOT!!!!!
+
+if ruby/rails in slim doesnt work it could be because the surrounding htmls tags.
+e.g.
+
+not working:
+        form.navbar-form
+            = bootstrap_form_for(:user, :url => session_path(:user)) do |f|
+              = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
+              = f.password_field :password, :placeholder => 'Password', hide_label: true
+              = f.submit 'Log in', :class => 'btn btn-primary'
+
+working:
+        = bootstrap_form_for(:user, :url => session_path(:user), html: { class: 'navbar-form' }) do |f|
+          = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
+          = f.password_field :password, :placeholder => 'Password', hide_label: true
+          = f.submit 'Log in', :class => 'btn btn-primary'
+
+      OR
+
+        .form.navbar-form
+            = bootstrap_form_for(:user, :url => session_path(:user)) do |f|
+              = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
+              = f.password_field :password, :placeholder => 'Password', hide_label: true
+              = f.submit 'Log in', :class => 'btn btn-primary'
