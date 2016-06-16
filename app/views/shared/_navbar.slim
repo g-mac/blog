@@ -24,15 +24,20 @@ nav.navbar.navbar-default.navbar-static-top
         - if current_user
           form.navbar-form role='logout'
             | Logged in as #{current_user.email} &nbsp
-            = link_to 'Log out', log_out_path, class: 'btn btn-default btn-warning'
+            = link_to 'Log out', log_out_path, class: 'btn btn-default'
         - else
           /https://github.com/plataformatec/devise/wiki/How-To:-Display-a-custom-sign_in-form-anywhere-in-your-app
           /= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'navbar-form' }) do |f|
           .form.navbar-form
-            = bootstrap_form_for(:user, :url => session_path(:user)) do |f|
-                = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
-                = f.password_field :password, :placeholder => 'Password', hide_label: true
-                = f.submit 'Log in', :class => 'btn btn-primary'
+            .dropdown
+              .dropdown-toggle.btn.btn-default.btn-warning data-toggle='dropdown' href='#' Login
+              .dropdown-menu
+                = render 'shared/login'
+              /.form.navbar-form
+              /  = bootstrap_form_for(:user, :url => session_path(:user)) do |f|
+              /      = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
+              /      = f.password_field :password, :placeholder => 'Password', hide_label: true
+              /      = f.submit 'Log in', :class => 'btn btn-primary'
           /= link_to 'Log in', log_in_path, class: 'btn btn-default btn-primary
 
       /.navbar-right
