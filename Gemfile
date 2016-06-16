@@ -61,6 +61,9 @@ gem 'omniauth-facebook'
 
 gem 'html2slim'
 
+gem 'bootstrap-social-rails'
+gem 'font-awesome-sass'
+
 # gem 'foreman'
 # group :production, :staging do
 #   gem 'rails_12factor'
