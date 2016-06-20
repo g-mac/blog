@@ -1,5 +1,12 @@
 == README (Simon)
 
+requirements:
+
+install mailcatcher to catch mails on developement:
+1. $ gem install mailcatcher
+2. $ mailcatcher
+2. go to localhost:1080 to view caught email in browser
+
 === Heroku creation:
 
 $ heroku login (simonmayrshofer@gmail.com)
