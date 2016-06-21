@@ -1,10 +1,11 @@
 /.container
-.div.text-center style="padding:17px;"
+.div.text-center style='padding:17px;'
   = bootstrap_form_for(:user, :url => session_path(:user)) do |f|
       = f.email_field :email, :autofocus => true, :placeholder => 'Email address', hide_label: true
       br
       br
       = f.password_field :password, :placeholder => 'Password', hide_label: true
+      = link_to 'forgot password?', new_password_path(:user)
       br
       br
       = f.submit 'Log in', :class =>  'btn btn-default'
@@ -17,7 +18,7 @@
       | Login with Facebook
 
   /- resource_class.omniauth_providers.each do |provider|
-  /  = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
+  /  = link_to 'Sign in with #{OmniAuth::Utils.camelize(provider)}', omniauth_authorize_path(resource_name, provider)
 
     /= render 'devise/shared/links'
 /
