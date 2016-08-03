@@ -19,22 +19,24 @@ br
   .panel-body
     = @article.text
 
-br
-hr
-br
 
-h4 Comments:
-br
-= render @article.comments
+- if @article.comments.any?
+  br
+  hr
+  br
+  h4 Comments:
+  br
+  = render @article.comments
+  br
 
-br
-br
-hr
-br
 
-h4 Add a comment:
-br
-= render 'comments/form'
+- if current_user
+  br
+  hr
+  br
+  h4 Add a comment:
+  br
+  = render 'comments/form'
 
 
 br
