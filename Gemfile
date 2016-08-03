@@ -59,6 +59,8 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'omniauth-facebook'
 
+gem 'simple_token_authentication', '~> 1.0'
+
 gem 'html2slim'
 
 gem 'bootstrap-social-rails'
