@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   # get 'users/new'
   # instead use:
 
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :articles
+    end
+  end
+
   get 'welcome/index'
   get 'welcome/portfolio'
 
