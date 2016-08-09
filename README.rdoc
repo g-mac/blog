@@ -22,7 +22,7 @@ $ heroku run rake db:create db:migrate #(had to run this for it to work?)
 
 $ heroku login
 
-$ heroku git push heroku master
+$ git push heroku master
 
 $ heroku open
 
