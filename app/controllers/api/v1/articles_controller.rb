@@ -2,7 +2,7 @@ module Api
   module V1
     class ArticlesController < ApplicationController
 
-      acts_as_token_authentication_handler_for User
+      acts_as_token_authentication_handler_for User, except: [:index, :show]
 
       respond_to :json
 
