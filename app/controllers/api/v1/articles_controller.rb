@@ -7,12 +7,14 @@ module Api
       respond_to :json
 
       def index
-        # use RABL instean (episode 322)
-        respond_with Article.all
+        # respond_with Article.all
+        # use RABL instead (episode 322)
+        @articles = Article.all
       end
 
       def show
-        respond_with Article.find(params[:id])
+        # respond_with Article.find(params[:id])
+        @article = Article.find(params[:id])
       end
 
       def create
