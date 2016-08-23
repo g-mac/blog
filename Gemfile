@@ -68,6 +68,9 @@ gem 'font-awesome-sass'
 
 gem 'active_model_serializers', '~> 0.10.0'
 
+gem 'rabl'
+# gem 'oj'
+
 # gem 'foreman'
 # group :production, :staging do
 #   gem 'rails_12factor'
