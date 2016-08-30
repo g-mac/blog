@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }, :controllers => {sessions: 'sessions'}
+  devise_for :users, :controllers => {:omniauth_callbacks => 'users/omniauth_callbacks'}, :controllers => {sessions: 'sessions'}
   # get 'sessions/new'
   # get 'users/new'
   # instead use:
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :articles
+      resources :articles do
+        resources :comments
+      end
     end
   end
 
