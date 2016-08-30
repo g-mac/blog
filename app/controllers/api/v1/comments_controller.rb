@@ -2,6 +2,9 @@ module Api
   module V1
     class CommentsController < ApplicationController
 
+      skip_before_action :verify_authenticity_token
+      # skip_before_action :verify_authenticity_token, :only => [:create] #need to fix this security hole
+
       # before_action :authenticate_user!, except: [:index, :show]
       # acts_as_token_authentication_handler_for User, except: [:index, :show] # todo reactivate
 
