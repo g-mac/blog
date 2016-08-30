@@ -14,7 +14,8 @@ module Api
         @article = Article.find(params[:article_id])
         @comment = @article.comments.create(comment_params)
         # head :ok
-        render :json => @article
+        # render :json => @article.comments
+        render '/api/v1/articles/show'
       end
 
       def destroy
